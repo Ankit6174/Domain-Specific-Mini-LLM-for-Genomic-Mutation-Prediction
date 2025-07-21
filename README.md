@@ -1,0 +1,2 @@
+# Domain-Specific-Mini-LLM-for-Genomic-Mutation-Prediction
+Predicting clinically relevant DNA mutations is challenging due to sequence variability and limited labeled data. This transformer-based, domain-specific multi-task model that predicts mutation type, position, and impact directly from raw DNA, enabling scalable analysis for genomics and clinical diagnosis.
