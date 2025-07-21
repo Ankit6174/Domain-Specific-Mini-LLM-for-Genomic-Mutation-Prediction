@@ -1,0 +1,5 @@
+Node Server/node_modules
+Python Server/venv
+Data Extraction/Data/GRCh38.fa
+Data Extraction/Data/new_clinvar.vcf
+Dataset/data.csv
