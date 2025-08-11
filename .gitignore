@@ -1,5 +1,9 @@
 Node Server/node_modules
+Node Server/package-lock.json
+
 Python Server/venv
+
 Data Extraction/Data/GRCh38.fa
 Data Extraction/Data/new_clinvar.vcf
+
 Dataset/data.csv
