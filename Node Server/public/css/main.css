@@ -1,7 +1,651 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oooh+Baby&family=Questrial&family=Splash&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+::selection {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+body {
+  font-family: "Inter";
+  background: #F6F6F6;
+}
+
+.home {
+  width: 100%;
+  height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  height: 80px;
+  border: 1px solid black;
+}
+
+.hero-section {
+  width: 100%;
+  height: calc(100% - 80px);
+}
+
+.about {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-left-container {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-container-main-heading {
+  font-size: 60px;
+  font-family: "Questrial";
+  margin-top: 20px;
+}
+
+.about-main-content-container {
+  width: 400px;
+  height: 300px;
+}
+
+.about-main-content-top-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-main-content-main-top-container {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-family: "IBM Plex Mono";
+  font-weight: 400;
+  gap: 10px;
+}
+
+.about-page-line {
+  width: 25%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.about-main-content-top-container-paragraph {
+  font-size: 14px;
+  font-family: "IBM Plex Mono";
+  font-weight: 200;
+}
+
+.about-main-content-bottom-container {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.about-main-content-bottom-container p {
+  font-family: "Questrial";
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.about-main-content-bottom-container-icon-container {
+  width: 60px;
+  height: 60px;
+  background: #2a2a2a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.about-box-container {
+  width: 85%;
+  height: 130px;
+  border-radius: 10px;
+  background-color: #EEEEEE;
+  position: relative;
+}
+
+.about-box-left-container {
+  width: 40%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+  background: #D9D9D9;
+}
+
+.about-box-left-line-container {
+  position: absolute;
+  bottom: 0;
+  height: 10px;
+  width: 100%;
+}
+
+.about-page-box-line {
+  width: 70%;
+  height: 100%;
+  background: #2a2a2a;
+  margin: auto;
+}
+
+.about-right-container {
+  width: 350px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-right-center-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.about-right-center-container-items {
+  width: 160px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-right-center-container-items h1 {
+  font-size: 50px;
+}
+.about-right-center-container-items p {
+  font-family: "IBM Plex Mono";
+  font-weight: 300;
+  font-size: 10px;
+}
+
+.about-box-containerr {
+  width: 85%;
+  height: 130px;
+  border-radius: 10px;
+  background-color: #EEEEEE;
+  position: relative;
+}
+
+.about-box-left-containerr {
+  width: 40%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+  background: #D9D9D9;
+}
+
+.about-box-left-line-containerr {
+  position: absolute;
+  bottom: 0;
+  height: 10px;
+  width: 100%;
+}
+
+.about-page-box-linee {
+  width: 70%;
+  height: 100%;
+  background: #2a2a2a;
+  margin: auto;
+}
+
+@media (min-width: 770px) {
+  .about-box-containerr {
+    display: none;
+  }
+}
+@media (max-width: 940px) {
+  .about-left-container {
+    width: 53%;
+  }
+  .about {
+    padding-left: 40px;
+  }
+  .about-box-container {
+    width: 300px;
+  }
+  .about-container-main-heading {
+    font-size: 40px;
+  }
+  .about-main-content-main-top-container {
+    font-size: 15px;
+  }
+  .about-main-content-top-container-paragraph {
+    font-size: 12px;
+    width: 300px;
+  }
+  .about-main-content-bottom-container p {
+    font-size: 16px;
+  }
+  .about-main-content-bottom-container-icon-container {
+    width: 50px;
+    height: 50px;
+  }
+  .about-main-content-container {
+    height: 270px;
+  }
+}
+@media (max-width: 770px) {
+  .about {
+    flex-direction: column;
+    padding: 0px 30px;
+  }
+  .about-right-container {
+    height: auto;
+    width: auto;
+    padding: 0px 0px 45px 0px;
+    width: 355px;
+  }
+  .about-main-content-top-container {
+    width: 355px;
+  }
+  .about-right-center-container {
+    width: 355px;
+  }
+  .about-box-containerr {
+    width: 330px;
+  }
+  .new {
+    display: none;
+  }
+  .about-main-content-bottom-container {
+    width: 300px;
+  }
+  .about-main-content-container {
+    width: auto;
+  }
+}
+.contact {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-main-heading {
+  width: 350px;
+  text-align: center;
+  font-size: 40px;
+  color: #2a2a2a;
+  font-family: "Questrial";
+  font-weight: 800;
+  margin-top: 50px;
+}
+
+.contact-main-paragraph {
+  width: 500px;
+  text-align: center;
+  font-family: "IBM Plex Mono";
+  color: #2a2a2a;
+}
+
+.contact-main-content-bottom-container {
+  width: 75%;
+  height: 550px;
+  display: flex;
+}
+
+.contact-main-content-bottom-left-container {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.name-email-input-contact-container {
+  display: flex;
+}
+
+.name-input-field-contact-container {
+  width: 250px;
+  height: 50px;
+  font-family: "Questrial";
+  font-weight: 500;
+}
+.name-input-field-contact-container input {
+  height: 40px;
+  border: none;
+  padding-left: 30px;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  font-family: "IBM Plex Mono";
+  outline: none;
+}
+.name-input-field-contact-container input::placeholder {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.email-input-field-contact-container {
+  width: 250px;
+  height: 50px;
+  font-family: "Questrial";
+  font-weight: 500;
+}
+.email-input-field-contact-container input {
+  height: 40px;
+  border: none;
+  padding-left: 30px;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  font-family: "IBM Plex Mono";
+  outline: none;
+}
+.email-input-field-contact-container input::placeholder {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.organization-input-field-contact-container {
+  width: 300px;
+  height: 50px;
+  font-family: "Questrial";
+  font-weight: 500;
+}
+.organization-input-field-contact-container input {
+  height: 40px;
+  width: 300px;
+  border: none;
+  padding-left: 30px;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  font-family: "IBM Plex Mono";
+  outline: none;
+}
+.organization-input-field-contact-container input::placeholder {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.what-in-you-mind-input-field-contact-container {
+  width: 300px;
+  font-family: "Questrial";
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#topics {
+  width: 400px;
+}
+#topics button {
+  font-family: "IBM Plex Mono";
+  background: #f9f9f9;
+  padding: 5px 10px;
+  border-radius: 50px;
+  border: 0.5px solid #2a2a2a;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#topics button.selected {
+  background-color: #cacaca;
+}
+
+.message-input-field-contact-container {
+  width: 300px;
+  height: 50px;
+  font-family: "Questrial";
+  font-weight: 500;
+}
+.message-input-field-contact-container input {
+  height: 40px;
+  width: 300px;
+  border: none;
+  padding-left: 30px;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  font-family: "IBM Plex Mono";
+  outline: none;
+}
+.message-input-field-contact-container input::placeholder {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.contact-page-main-send-button {
+  width: 150px;
+  height: 45px;
+  font-family: "Questrial";
+  font-size: 18px;
+  background: #2a2a2a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-main-content-bottom-right-container {
+  width: 250px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.contact-contacts-main-container {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-page-visit-us-container {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-page-visit-us-container h2 {
+  font-family: "Questrial";
+  font-weight: 600;
+  color: #4a4a4a;
+}
+.contact-page-visit-us-container p {
+  font-family: "IBM Plex Mono";
+  font-weight: 300;
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.contact-page-talk-us-to-container {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-page-talk-us-to-container h2 {
+  font-family: "Questrial";
+  font-weight: 600;
+  color: #4a4a4a;
+}
+.contact-page-talk-us-to-container p {
+  font-family: "IBM Plex Mono";
+  font-weight: 300;
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.contact-page-icons-container {
+  width: 150px;
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+}
+.contact-page-icons-container i {
+  cursor: pointer;
+  transition: 0.2s;
+  color: #2a2a2a;
+}
+.contact-page-icons-container i:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 850px) {
+  .name-email-input-contact-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .contact-main-content-bottom-container {
+    height: auto;
+    flex-direction: column;
+  }
+  .contact-contacts-main-container {
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    padding: 50px 0px;
+  }
+}
+@media (max-width: 570px) {
+  .contact-contacts-main-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .contact-main-content-bottom-container {
+    margin-top: 25px;
+    height: auto;
+    width: 85%;
+  }
+  .contact-main-heading {
+    width: 340px;
+    font-size: 35px;
+  }
+  .contact-main-paragraph {
+    width: 320px;
+    font-size: 12px;
+  }
+  .contact {
+    width: auto;
+  }
+  #topics {
+    width: 335px;
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+  }
+  .name-input-field-contact-container input {
+    width: 300px;
+  }
+  .email-input-field-contact-container input {
+    width: 300px;
+  }
+}
+.call-to-action {
+  width: 100%;
+  height: 65vh;
+  background: #2a2a2a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.call-to-action h1 {
+  width: 600px;
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  font-family: "Questrial";
+  font-weight: 600;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.button-contianer-call-to-action {
+  width: 200px;
+  height: 52px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 20px;
+  background: white;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.1s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.footer-icons-container-call-to-action {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-icon-cto {
+  padding: 10px;
+  text-transform: uppercase;
+  color: white;
+  font-family: "IBM Plex Mono";
+  font-weight: 300;
+  cursor: pointer;
+  transition: 0.3s;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.footer-icon-cto:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 600px) {
+  .call-to-action h1 {
+    width: 400px;
+    font-size: 40px;
+  }
+  .footer-icons-container-call-to-action {
+    width: 410px;
+  }
+}
+@media (max-width: 420px) {
+  .call-to-action h1 {
+    width: 350px;
+  }
+  .button-contianer-call-to-action {
+    font-size: 16px;
+  }
+  .footer-icons-container-call-to-action {
+    width: 350px;
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

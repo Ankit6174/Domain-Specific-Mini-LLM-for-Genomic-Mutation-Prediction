@@ -1,0 +1,108 @@
+.call-to-action{
+    width: 100%;
+    height: 65vh;
+    background: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    h1 {
+        width: 600px;
+        text-align: center;
+        color: white;
+        font-size: 60px;
+        font-family: "Questrial";
+        font-weight: 600;
+    }
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.button-contianer-call-to-action {
+    width: 200px;
+    height: 52px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+    background: white; 
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.1s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.footer-icons-container-call-to-action{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-icon-cto{
+    padding: 10px;
+    text-transform: uppercase;
+    color: white;
+    font-family: "IBM Plex Mono";
+    font-weight: 300;
+    cursor: pointer;
+    transition: 0.3s;
+    -webkit-user-select: none;
+    user-select: none;
+
+    &:hover{
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 600px) {
+    .call-to-action {
+        h1 {
+            width: 400px;
+            font-size: 40px;
+        }
+    }
+
+    .footer-icons-container-call-to-action {
+        width: 410px;
+    }
+}
+
+@media (max-width: 420px) {
+    .call-to-action {
+        h1 {
+            width: 350px;
+        }
+    }
+
+    .button-contianer-call-to-action {
+        font-size: 16px;
+    }
+
+    .footer-icons-container-call-to-action {
+        width: 350px;
+        font-size: 14px;
+    }
+}

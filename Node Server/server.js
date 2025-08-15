@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
     res.render("Home");
 });
 
+app.get('/prediction', (req, res) => {
+    res.render("Prediction");
+});
+
 app.listen(PORT, () => {
     console.log(`Server Running On http://localhost:${PORT}/`);
 });
