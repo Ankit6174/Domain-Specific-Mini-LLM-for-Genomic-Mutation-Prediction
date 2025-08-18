@@ -10,9 +10,14 @@
   color: #fff;
 }
 
+#main {
+  overflow: hidden;
+}
+
 body {
   font-family: "Inter";
   background: #F6F6F6;
+  overflow: hidden;
 }
 
 .home {
@@ -46,6 +51,9 @@ nav {
   transition: 0.2s;
   font-family: "Wix Madefor Text", sans-serif;
   font-weight: 100;
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-30px);
 }
 .navbar-ion-container a:hover {
   font-weight: 600;
@@ -62,6 +70,9 @@ nav {
   transition: 0.2s;
   font-family: "Wix Madefor Text", sans-serif;
   font-weight: 100;
+  display: inline-block;
+  transform: translateX(-30px);
+  opacity: 0;
 }
 .navbar-predict-container a:hover {
   font-weight: 600;
@@ -86,12 +97,24 @@ nav {
   padding-bottom: 30px;
 }
 
+.hero-section-main-heading span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.higlighted-text-hero-section {
+  color: rgb(182, 182, 182);
+}
+
 .scroll-animation-container {
   gap: 15px;
   display: flex;
   align-items: center;
   font-family: "Wix Madefor Text", sans-serif;
   font-weight: 100;
+  opacity: 0;
+  transform: translateY(10px);
 }
 
 .scroll-animation-main-container {
@@ -147,6 +170,13 @@ nav {
   border-radius: 40px;
   font-family: "Wix Madefor Text", sans-serif;
   font-size: 100;
+  transform: translateX(50px);
+  opacity: 0;
+  transition: 0.2s;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+.hero-button-container:hover {
+  gap: 20px;
 }
 
 .material-symbols-outlined {
@@ -175,6 +205,11 @@ nav {
   text-transform: uppercase;
 }
 
+.hero-section-bottom-container p {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+
 @media (max-width: 960px) {
   .hero-section-bottom-container {
     flex-direction: column-reverse;
@@ -187,16 +222,21 @@ nav {
     padding-bottom: 0px;
     font-size: 65px;
   }
+  .hero-button-container {
+    font-size: 15px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+  }
 }
 @media (max-width: 730px) {
   .navbar-predict-container {
     display: none;
   }
   nav {
-    padding: 30px 20px;
+    padding: 40px 20px;
   }
   .hero-section {
     padding: 0px 20px;
+    gap: 25px;
   }
   .hero-section h1 {
     font-size: 40px;
@@ -212,13 +252,14 @@ nav {
   }
   .hero-button-container {
     font-size: 15px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
   }
   .hero-button-container {
     width: 250px;
     height: 55px;
   }
   .ribbon-container {
-    padding: 80px 10px;
+    padding: 100px 10px;
   }
 }
 .about {
@@ -239,6 +280,8 @@ nav {
   font-size: 60px;
   font-family: "Questrial";
   margin-top: 20px;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .about-main-content-container {
@@ -259,6 +302,8 @@ nav {
   font-family: "IBM Plex Mono";
   font-weight: 400;
   gap: 10px;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .about-page-line {
@@ -271,6 +316,8 @@ nav {
   font-size: 14px;
   font-family: "IBM Plex Mono";
   font-weight: 200;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .about-main-content-bottom-container {
@@ -286,6 +333,8 @@ nav {
   font-weight: 500;
   cursor: pointer;
   text-decoration: underline;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .about-main-content-bottom-container-icon-container {
@@ -299,6 +348,8 @@ nav {
   border-radius: 50%;
   font-size: 22px;
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .about-box-container {
@@ -307,6 +358,8 @@ nav {
   border-radius: 10px;
   background-color: #EEEEEE;
   position: relative;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .about-box-left-container {
@@ -350,6 +403,8 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(40px);
 }
 .about-right-center-container-items h1 {
   font-size: 50px;
@@ -367,6 +422,8 @@ nav {
   border-radius: 10px;
   background-color: #EEEEEE;
   position: relative;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .about-box-left-containerr {
@@ -462,6 +519,7 @@ nav {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-top: 70px;
   gap: 10px;
 }
 
@@ -473,6 +531,8 @@ nav {
   font-family: "Questrial";
   font-weight: 800;
   margin-top: 50px;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .contact-main-paragraph {
@@ -480,6 +540,8 @@ nav {
   text-align: center;
   font-family: "IBM Plex Mono";
   color: #2a2a2a;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .contact-main-content-bottom-container {
@@ -499,6 +561,8 @@ nav {
 
 .name-email-input-contact-container {
   display: flex;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .name-input-field-contact-container {
@@ -550,6 +614,8 @@ nav {
   height: 50px;
   font-family: "Questrial";
   font-weight: 500;
+  opacity: 0;
+  transform: translateY(40px);
 }
 .organization-input-field-contact-container input {
   height: 40px;
@@ -575,6 +641,8 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 #topics {
@@ -599,6 +667,8 @@ nav {
   height: 50px;
   font-family: "Questrial";
   font-weight: 500;
+  opacity: 0;
+  transform: translateY(40px);
 }
 .message-input-field-contact-container input {
   height: 40px;
@@ -627,6 +697,12 @@ nav {
   border: none;
   border-radius: 50px;
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.2s;
+}
+.contact-page-main-send-button:hover {
+  background: #474747;
 }
 
 .contact-main-content-bottom-right-container {
@@ -654,12 +730,16 @@ nav {
   font-family: "Questrial";
   font-weight: 600;
   color: #4a4a4a;
+  opacity: 0;
+  transform: translateY(40px);
 }
 .contact-page-visit-us-container p {
   font-family: "IBM Plex Mono";
   font-weight: 300;
   color: #4a4a4a;
   font-size: 14px;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .contact-page-talk-us-to-container {
@@ -672,12 +752,16 @@ nav {
   font-family: "Questrial";
   font-weight: 600;
   color: #4a4a4a;
+  opacity: 0;
+  transform: translateY(40px);
 }
 .contact-page-talk-us-to-container p {
   font-family: "IBM Plex Mono";
   font-weight: 300;
   color: #4a4a4a;
   font-size: 14px;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .contact-page-icons-container {
@@ -690,6 +774,8 @@ nav {
   cursor: pointer;
   transition: 0.2s;
   color: #2a2a2a;
+  opacity: 0;
+  transform: translateY(20px);
 }
 .contact-page-icons-container i:hover {
   transform: translateY(-5px);
@@ -762,6 +848,8 @@ nav {
   font-size: 60px;
   font-family: "Questrial";
   font-weight: 600;
+  opacity: 0;
+  transform: translateY(50px);
 }
 
 .material-symbols-outlined {
@@ -779,10 +867,9 @@ nav {
   font-size: 20px;
   background: white;
   cursor: pointer;
-  overflow: hidden;
-  transition: transform 0.1s;
-  transform-style: preserve-3d;
-  perspective: 1000px;
+  opacity: 0;
+  transform: translateY(50px);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
 .glow {
@@ -810,12 +897,14 @@ nav {
   font-family: "IBM Plex Mono";
   font-weight: 300;
   cursor: pointer;
-  transition: 0.3s;
+  transition: font-weight 0.4s;
   -webkit-user-select: none;
   user-select: none;
+  opacity: 0;
+  transform: translateY(20px);
 }
 .footer-icon-cto:hover {
-  transform: translateY(-5px);
+  font-weight: 500;
 }
 
 @media (max-width: 600px) {

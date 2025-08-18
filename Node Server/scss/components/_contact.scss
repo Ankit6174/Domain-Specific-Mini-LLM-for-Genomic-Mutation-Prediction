@@ -1,318 +1,348 @@
 .contact {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 70px;
+  gap: 10px;
 }
 
 .contact-main-heading {
-    width: 350px;
-    text-align: center;
-    font-size: 40px;
-    color: #2a2a2a;
-    font-family: "Questrial";
-    font-weight: 800;
-    margin-top: 50px;
+  width: 350px;
+  text-align: center;
+  font-size: 40px;
+  color: #2a2a2a;
+  font-family: "Questrial";
+  font-weight: 800;
+  margin-top: 50px;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .contact-main-paragraph {
-    width: 500px;
-    text-align: center;
-    font-family: "IBM Plex Mono";
-    color: #2a2a2a;
+  width: 500px;
+  text-align: center;
+  font-family: "IBM Plex Mono";
+  color: #2a2a2a;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .contact-main-content-bottom-container {
-    width: 75%;
-    height: 550px;
-    display: flex;
+  width: 75%;
+  height: 550px;
+  display: flex;
 }
 
 .contact-main-content-bottom-left-container {
-    width: 70%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 30px;
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
 }
 
 .name-email-input-contact-container {
-    display: flex;
+  display: flex;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .name-input-field-contact-container {
-    width: 250px;
-    height: 50px;
-    font-family: "Questrial";
-    font-weight: 500;
+  width: 250px;
+  height: 50px;
+  font-family: "Questrial";
+  font-weight: 500;
 
-    input {
-        height: 40px;
-        border: none;
-        padding-left: 30px;
-        border-bottom: 1px solid #ccc;
-        background: transparent;
-        font-size: 14px;
-        color: #333;
-        font-family: "IBM Plex Mono";
-        outline: none;
-    }
+  input {
+    height: 40px;
+    border: none;
+    padding-left: 30px;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+    font-family: "IBM Plex Mono";
+    outline: none;
+  }
 
-    input::placeholder {
-        color: #aaa;
-        font-size: 13px;
-    }
+  input::placeholder {
+    color: #aaa;
+    font-size: 13px;
+  }
 }
 
 .email-input-field-contact-container {
-    width: 250px;
-    height: 50px;
-    font-family: "Questrial";
-    font-weight: 500;
+  width: 250px;
+  height: 50px;
+  font-family: "Questrial";
+  font-weight: 500;
 
-    input {
-        height: 40px;
-        border: none;
-        padding-left: 30px;
-        border-bottom: 1px solid #ccc;
-        background: transparent;
-        font-size: 14px;
-        color: #333;
-        font-family: "IBM Plex Mono";
-        outline: none;
-    }
+  input {
+    height: 40px;
+    border: none;
+    padding-left: 30px;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+    font-family: "IBM Plex Mono";
+    outline: none;
+  }
 
-    input::placeholder {
-        color: #aaa;
-        font-size: 13px;
-    }
+  input::placeholder {
+    color: #aaa;
+    font-size: 13px;
+  }
 }
 
 .organization-input-field-contact-container {
+  width: 300px;
+  height: 50px;
+  font-family: "Questrial";
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(40px);
+
+  input {
+    height: 40px;
     width: 300px;
-    height: 50px;
-    font-family: "Questrial";
-    font-weight: 500;
+    border: none;
+    padding-left: 30px;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+    font-family: "IBM Plex Mono";
+    outline: none;
+  }
 
-    input {
-        height: 40px;
-        width: 300px;
-        border: none;
-        padding-left: 30px;
-        border-bottom: 1px solid #ccc;
-        background: transparent;
-        font-size: 14px;
-        color: #333;
-        font-family: "IBM Plex Mono";
-        outline: none;
-    }
-
-    input::placeholder {
-        color: #aaa;
-        font-size: 13px;
-    }
+  input::placeholder {
+    color: #aaa;
+    font-size: 13px;
+  }
 }
 
 .what-in-you-mind-input-field-contact-container {
-    width: 300px;
-    font-family: "Questrial";
-    font-weight: 500;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  width: 300px;
+  font-family: "Questrial";
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 #topics {
-    width: 400px;
+  width: 400px;
 
-    button {
-        font-family: "IBM Plex Mono";
-        background: #f9f9f9;
-        padding: 5px 10px;
-        border-radius: 50px;
-        border: 0.5px solid #2a2a2a;
-        margin-top: 5px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+  button {
+    font-family: "IBM Plex Mono";
+    background: #f9f9f9;
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 0.5px solid #2a2a2a;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
 
-    button.selected {
-        background-color: #cacaca;
-    }
+  button.selected {
+    background-color: #cacaca;
+  }
 }
 
 .message-input-field-contact-container {
+  width: 300px;
+  height: 50px;
+  font-family: "Questrial";
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(40px);
+
+  input {
+    height: 40px;
     width: 300px;
-    height: 50px;
-    font-family: "Questrial";
-    font-weight: 500;
+    border: none;
+    padding-left: 30px;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+    font-family: "IBM Plex Mono";
+    outline: none;
+  }
 
-    input {
-        height: 40px;
-        width: 300px;
-        border: none;
-        padding-left: 30px;
-        border-bottom: 1px solid #ccc;
-        background: transparent;
-        font-size: 14px;
-        color: #333;
-        font-family: "IBM Plex Mono";
-        outline: none;
-    }
-
-    input::placeholder {
-        color: #aaa;
-        font-size: 13px;
-    }
+  input::placeholder {
+    color: #aaa;
+    font-size: 13px;
+  }
 }
 
 .contact-page-main-send-button {
-    width: 170px;
-    height: 45px;
-    font-family: "Questrial";
-    font-size: 18px;
-    background: #2a2a2a;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
+  width: 170px;
+  height: 45px;
+  font-family: "Questrial";
+  font-size: 18px;
+  background: #2a2a2a;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.2s;
+
+  &:hover {
+    background: #474747;
+  }
 }
 
 .contact-main-content-bottom-right-container {
-    width: 250px;
-    height: 100%;
-    display: flex;
-    align-items: center;
+  width: 250px;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .contact-contacts-main-container {
-    width: 250px;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .contact-page-visit-us-container {
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
-    h2 {
-        font-family: "Questrial";
-        font-weight: 600;
-        color: #4a4a4a;
-    }
+  h2 {
+    font-family: "Questrial";
+    font-weight: 600;
+    color: #4a4a4a;
+    opacity: 0;
+    transform: translateY(40px);
+  }
 
-    p {
-        font-family: "IBM Plex Mono";
-        font-weight: 300;
-        color: #4a4a4a;
-        font-size: 14px;
-    }
+  p {
+    font-family: "IBM Plex Mono";
+    font-weight: 300;
+    color: #4a4a4a;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(40px);
+  }
 }
 
 .contact-page-talk-us-to-container {
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
-    h2 {
-        font-family: "Questrial";
-        font-weight: 600;
-        color: #4a4a4a;
-    }
+  h2 {
+    font-family: "Questrial";
+    font-weight: 600;
+    color: #4a4a4a;
+    opacity: 0;
+    transform: translateY(40px);
+  }
 
-    p {
-        font-family: "IBM Plex Mono";
-        font-weight: 300;
-        color: #4a4a4a;
-        font-size: 14px;
-    }
+  p {
+    font-family: "IBM Plex Mono";
+    font-weight: 300;
+    color: #4a4a4a;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(40px);
+  }
 }
 
 .contact-page-icons-container {
-    width: 150px;
-    display: flex;
-    gap: 15px;
-    font-size: 20px;
+  width: 150px;
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
 
-    i {
-        cursor: pointer;
-        transition: 0.2s;
-        color: #2a2a2a;
+  i {
+    cursor: pointer;
+    transition: 0.2s;
+    color: #2a2a2a;
+    opacity: 0;
+    transform: translateY(20px);
 
-        &:hover {
-            transform: translateY(-5px);
-        }
+    &:hover {
+      transform: translateY(-5px);
     }
+  }
 }
 
 @media (max-width: 850px) {
-    .name-email-input-contact-container {
-        flex-direction: column;
-        gap: 30px;
-    }
+  .name-email-input-contact-container {
+    flex-direction: column;
+    gap: 30px;
+  }
 
-    .contact-main-content-bottom-container {
-        height: auto;
-        flex-direction: column;
-    }
+  .contact-main-content-bottom-container {
+    height: auto;
+    flex-direction: column;
+  }
 
-    .contact-contacts-main-container {
-        width: auto;
-        height: auto;
-        flex-direction: row;
-        padding: 50px 0px;
-    }
+  .contact-contacts-main-container {
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    padding: 50px 0px;
+  }
 }
 
 @media (max-width: 570px) {
-    .contact-contacts-main-container {
-        flex-direction: column;
-        gap: 30px;
-    }
+  .contact-contacts-main-container {
+    flex-direction: column;
+    gap: 30px;
+  }
 
-    .contact-main-content-bottom-container {
-        margin-top: 25px;
-        height: auto;
-        width: 85%;
-    }
+  .contact-main-content-bottom-container {
+    margin-top: 25px;
+    height: auto;
+    width: 85%;
+  }
 
-    .contact-main-heading {
-        width: 340px;
-        font-size: 35px;
-    }
+  .contact-main-heading {
+    width: 340px;
+    font-size: 35px;
+  }
 
-    .contact-main-paragraph {
-        width: 320px;
-        font-size: 12px;
-    }
+  .contact-main-paragraph {
+    width: 320px;
+    font-size: 12px;
+  }
 
-    .contact {
-        width: auto;
-    }
+  .contact {
+    width: auto;
+  }
 
-    #topics {
-        width: 335px;
-        display: flex;
-        gap: 3px;
-        flex-wrap: wrap;
-    }
+  #topics {
+    width: 335px;
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+  }
 
-    .name-input-field-contact-container {
-        input {
-            width: 300px;
-        }
+  .name-input-field-contact-container {
+    input {
+      width: 300px;
     }
+  }
 
-    .email-input-field-contact-container {
-        input {
-            width: 300px;
-        }
+  .email-input-field-contact-container {
+    input {
+      width: 300px;
     }
+  }
 }
