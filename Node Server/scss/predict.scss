@@ -1,2 +1,15 @@
 @use 'base/reset.scss';
-@use 'base/body.scss';
+
+@use 'components/firstRow';
+@use 'components/r2';
+@use 'components/r3';
+@use 'components/r4';
+@use 'components/r5';
+@use 'components/r6';
+
+body{
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}

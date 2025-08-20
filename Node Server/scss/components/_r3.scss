@@ -1,0 +1,158 @@
+.third-row{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.label-prediction-container {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px 0px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.label-prediction-main-heading{
+    color: gray;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: "Wix Madefor Text", sans-serif;
+}
+
+.label-prediction-main-prediction-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.label-prediction-main-prediction-top-container{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    p {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 2px;
+    }
+}
+
+.label-prediction-main-prediction-cofidence-container{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Wix Madefor Text", sans-serif;
+    color: green;
+    background: #0080004f;
+}
+
+.label-prediction-main-line{
+    width: 150px;
+    height: 1px;
+    border-radius: 5px;
+    background: gray;
+}
+
+.label-prediction-main-bar-chart-container{
+    padding: 30px 5px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.label-prediction-main-bar-chart-left-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    p{
+        text-align: right;
+        color: gray;
+        font-size: 14px;
+        font-weight: 300;
+        font-family: "Wix Madefor Text", sans-serif;
+    }
+}
+
+.label-prediction-main-bar-chart-right-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 270px;
+    height: 170px;
+}
+
+.label-prediction-main-line-container{
+    width: 100%;
+    height: 17%;
+    display: flex;
+    gap: 5px;
+}
+
+.label-prediction-main-line-line{
+    border-radius: 5px;
+    height: 100%;
+    background: #2a2a2a;
+    transition: 0.2s;
+    animation: labelPred 0.7s;
+    cursor: pointer;
+
+    &:hover{
+        scale: 1.1;
+    }
+}
+
+@keyframes labelPred {
+    from{
+        width: 0%;
+    }
+}
+
+.label-prediction-main-line-percentange{
+    height: 120%;
+    font-weight: 300;
+    transform: rotateZ(90deg);
+    font-size: 10px;
+    font-family: "Wix Madefor Text", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-dna-sequence-container{
+    padding: 20px 30px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.input-dna-main-heading{
+    font-size: 20px;
+    font-family: "Wix Madefor Text", sans-serif;
+}
+
+.input-dna-sequence-container-container{
+    display: flex;
+    justify-content: space-between;
+
+    p {
+        font-family: "IBM Plex Mono", monospace;
+    }
+}
+
+.dna-sequence-container{
+    width: 700px;
+    display: flex;
+    overflow-x: auto;
+    font-family: "Wix Madefor Text", sans-serif;
+}

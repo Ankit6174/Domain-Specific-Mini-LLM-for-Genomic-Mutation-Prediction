@@ -16,7 +16,7 @@
 
 body {
   font-family: "Inter";
-  background: #F6F6F6;
+  background: #f6f6f6;
   overflow: hidden;
 }
 
@@ -356,7 +356,7 @@ nav {
   width: 85%;
   height: 130px;
   border-radius: 10px;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   position: relative;
   opacity: 0;
   transform: translateY(30px);
@@ -366,7 +366,7 @@ nav {
   width: 40%;
   height: 100%;
   border-radius: 10px 0 0 10px;
-  background: #D9D9D9;
+  background: #d9d9d9;
 }
 
 .about-box-left-line-container {
@@ -420,7 +420,7 @@ nav {
   width: 85%;
   height: 130px;
   border-radius: 10px;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   position: relative;
   opacity: 0;
   transform: translateY(30px);
@@ -430,7 +430,7 @@ nav {
   width: 40%;
   height: 100%;
   border-radius: 10px 0 0 10px;
-  background: #D9D9D9;
+  background: #d9d9d9;
 }
 
 .about-box-left-line-containerr {

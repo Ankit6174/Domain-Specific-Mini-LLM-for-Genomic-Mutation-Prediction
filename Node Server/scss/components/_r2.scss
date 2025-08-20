@@ -1,0 +1,71 @@
+.second-row{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.second-card-container{
+    background: white;
+    display: flex;
+    gap: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-direction: column;
+    padding: 10px 15px;
+    transition: 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                0 1px 3px rgba(0, 0, 0, 0.08);
+
+    &:hover{
+        transform: translateY(-10px);
+    }
+}
+
+.second-card-main-heading{
+    font-size: 12px;
+    color: gray;
+}
+
+.second-card-main-heading{
+    font-size: 10px;
+    font-weight: 300;
+    font-family: "Wix Madefor Text", sans-serif;
+    color: gray;
+}
+
+.second-card-main-content{
+    font-weight: 500;
+    font-size: 22px;
+    font-family: "Wix Madefor Text", sans-serif;
+}
+
+.second-row-card-bottom-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    p {
+        font-size: 10px;
+        font-weight: 300;
+        font-family: "Wix Madefor Text", sans-serif;
+        color: gray;
+    }
+}
+
+.second-row-card-bottom-right-container{
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    border-radius: 5px;
+    padding: 3px 5px;
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    font-family: "IBM Plex Mono", monospace;
+
+    i {
+        font-size: 12px;
+        margin-top: 2px;
+    }
+}
