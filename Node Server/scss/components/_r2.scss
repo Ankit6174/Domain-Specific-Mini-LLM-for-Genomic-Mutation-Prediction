@@ -69,3 +69,17 @@
         margin-top: 2px;
     }
 }
+
+@media (max-width: 430px) {
+    .second-card-main-heading{
+        font-size: 8px;
+    }
+    .second-card-main-content{
+        font-size: 18px;
+    }
+    .second-row-card-bottom-container{
+        p{
+            font-size: 8px;
+        }
+    }
+}

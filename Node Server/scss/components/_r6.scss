@@ -78,3 +78,30 @@
         color: white;
     }
 }
+
+@media (max-width: 770px) {
+    .report-main-container, .report-print-container{
+        width: auto;
+    }
+}
+
+@media (max-width: 620px) {
+    .report-print-container{
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+    .report-print-button-container{
+        box-shadow: none;
+        width: 165px;
+    }
+    .report-alert-container{
+        width: 375px;
+    }
+}
+
+@media (max-width: 450px) {
+    .report-alert-container{
+        width: auto;
+        padding: 15px 10px;
+    }
+}

@@ -1,5 +1,6 @@
 .forth-row{
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
@@ -259,3 +260,7 @@
         margin-top: 3px;
     }
 }
+
+// @media (max-width: 1060px) {
+    
+// }

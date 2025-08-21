@@ -156,3 +156,61 @@
     overflow-x: auto;
     font-family: "Wix Madefor Text", sans-serif;
 }
+
+@media (max-width: 830px) {
+    .dna-sequence-container{
+        width: 440px;
+    }
+}
+
+@media (max-width: 570px) {
+    .label-prediction-main-heading{
+        font-size: 10px;
+    }
+
+    .label-prediction-main-prediction-top-container {
+        p{
+            font-size: 17px;
+        }
+    }
+
+    .label-prediction-main-prediction-cofidence-container{
+        width: 45px;
+        height: 45px;
+        font-size: 15px;
+    }
+
+    .label-prediction-main-line{
+        width: 85px;
+    }
+
+    .label-prediction-main-bar-chart-left-container {
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .label-prediction-main-bar-chart-right-container{
+        width: 180px;
+    }
+
+    .dna-sequence-container{
+        width: 300px;
+    }
+
+    .input-dna-sequence-container-container{
+        p{
+            font-size: 13px;
+        }
+    }
+
+    .input-dna-main-heading{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 460px) {
+    .dna-sequence-container{
+        width: 270px;
+    }
+}
