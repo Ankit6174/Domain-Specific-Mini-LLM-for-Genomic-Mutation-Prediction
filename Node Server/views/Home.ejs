@@ -210,17 +210,18 @@
           Have a nice works? Reach out and let's talk.
         </p>
         <div class="contact-main-content-bottom-container">
-          <form class="contact-main-content-bottom-left-container">
+          <form id="contectFrom" action="/getInContect" method="post" class="contact-main-content-bottom-left-container">
             <div class="name-email-input-contact-container">
               <div class="name-input-field-contact-container">
                 <label for="name">Name *</label> <br />
-                <input type="text" id="name" placeholder="Jon Doe" />
+                <input type="text" id="name" name="name" placeholder="Jon Doe" />
               </div>
               <div class="email-input-field-contact-container">
                 <label for="email">Email *</label> <br />
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   placeholder="Where can we reply?"
                 />
               </div>
@@ -230,6 +231,7 @@
               <input
                 type="text"
                 id="organization"
+                name="organization"
                 placeholder="Enter your organization or role"
               />
             </div>
@@ -273,10 +275,11 @@
               <input
                 type="text"
                 id="message"
+                name="message"
                 placeholder="Enter a description..."
               />
             </div>
-            <button class="contact-page-main-send-button" type="submit">
+            <button id="submitBtn" class="contact-page-main-send-button" type="submit">
               Send Message
             </button>
           </form>
@@ -316,6 +319,18 @@
             </div>
           </div>
         </div>
+
+        <div id="successMessage" class="message-show-container">
+          <div class="message-animation-main-container">
+            <div class="message-animation-background"></div>
+            <div class="message-animation-front">
+              <i class="ri-check-line"></i>
+            </div>
+          </div>
+          <h1>message sent successfully</h1>
+          <p>Thank you for reaching out to us. We appreciate your message and will respond at the earliest convenience.</p>
+        </div>
+        
       </div>
       <div class="call-to-action">
         <h1>Ready to Explore Your DNA Mutations?</h1>

@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 const scrollContainer = document.querySelector("#main");
 
 let locoScroll;
-const isMobile = window.innerWidth <= 500;
+const isMobile = window.innerWidth <= 300;
 
 if (!isMobile) {
   locoScroll = new LocomotiveScroll({

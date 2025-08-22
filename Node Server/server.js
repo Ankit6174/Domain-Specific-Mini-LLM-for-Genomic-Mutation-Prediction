@@ -1,8 +1,13 @@
 const express = require('express');
 const path = require('path');
+const dotenv = require('dotenv');
+const DB = require("./config/contectDB");
+const ContectSchema = require('./models/contect');
+
+dotenv.config();
 
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8001;
 
 const data = [
     {
@@ -110,6 +115,20 @@ app.get('/', (req, res) => {
 
 app.get('/prediction', (req, res) => {
     res.render("Prediction", {data, label, slicingGC, nucleoFreq, at_gc_content, mRNA});
+});
+
+DB();
+
+app.post("/postContect", async (req, res) => {
+    let { name, email, organization, mindTopic, message } = req.body;
+    await ContectSchema.create({
+        name, 
+        email, 
+        organization, 
+        mindTopic, 
+        message
+    });
+    res.sendStatus(200);
 });
 
 app.listen(PORT, () => {

@@ -156,7 +156,7 @@ gsap.to(".contact-main-heading, .contact-main-paragraph", {
   y: 0,
   opacity: 1,
   duration: 1,
-  delay: 1,
+  delay: 0.4,
   ease: "power4.out",
   stagger: 0.2,
   scrollTrigger: {
@@ -172,7 +172,6 @@ gsap.to(
     y: 0,
     opacity: 1,
     duration: 2,
-    delay: 1.2,
     ease: "power4.out",
     stagger: 0.2,
     scrollTrigger: {
@@ -190,7 +189,7 @@ gsap.to(
     y: 0,
     opacity: 1,
     duration: 1,
-    delay: 1.4,
+    delay: 0.5,
     ease: "power4.out",
     stagger: 0.2,
     scrollTrigger: {
@@ -206,7 +205,7 @@ gsap.to(".contact-page-icons-container i", {
   y: 0,
   opacity: 1,
   duration: 1,
-  delay: 0.5,
+  delay: 0.2,
   ease: "power4.out",
   stagger: 0.1,
   scrollTrigger: {
