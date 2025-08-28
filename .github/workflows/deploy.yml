@@ -6,14 +6,15 @@ name: Deploy to Render
 on:
   push:
     branches:
-      - main  # Or 'master', depending on your branch name
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:      # <--- ADD THIS BLOCK
+      deployments: write
     steps:
       # Step 1: Create the "Deployment" on GitHub
-      # This creates the "pending" status that you see
       - name: Create GitHub Deployment
         uses: bobheadxi/deployments@v1
         id: deployment
@@ -24,13 +25,11 @@ jobs:
           desc: Deploying to Render...
 
       # Step 2: Trigger the Render Deploy Hook
-      # This tells Render to pull your new code and build it
       - name: Trigger Render Deploy
         run: |
           curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
       
       # Step 3: Update the Deployment Status to "Success"
-      # This turns the link on your repo page green and active
       - name: Update GitHub Deployment Status
         uses: bobheadxi/deployments@v1
         if: success()
@@ -40,10 +39,9 @@ jobs:
           status: success
           env: ${{ steps.deployment.outputs.env }}
           deployment_id: ${{ steps.deployment.outputs.id }}
-          env_url: https://dna-mutation-prediction.onrender.com # Your actual website URL
+          env_url: https://dna-mutation-prediction.onrender.com
 
       # Step 4: Handle failure
-      # This makes the deployment link red if something goes wrong
       - name: Update GitHub Deployment Status on Failure
         uses: bobheadxi/deployments@v1
         if: failure()
