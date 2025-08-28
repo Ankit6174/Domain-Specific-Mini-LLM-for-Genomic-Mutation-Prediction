@@ -1,0 +1,55 @@
+# GitHub Actions workflow to trigger a Render deployment
+
+name: Deploy to Render
+
+# This action runs on every push to the 'main' branch
+on:
+  push:
+    branches:
+      - main  # Or 'master', depending on your branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Create the "Deployment" on GitHub
+      # This creates the "pending" status that you see
+      - name: Create GitHub Deployment
+        uses: bobheadxi/deployments@v1
+        id: deployment
+        with:
+          step: start
+          token: ${{ secrets.GITHUB_TOKEN }}
+          env: production
+          desc: Deploying to Render...
+
+      # Step 2: Trigger the Render Deploy Hook
+      # This tells Render to pull your new code and build it
+      - name: Trigger Render Deploy
+        run: |
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+      
+      # Step 3: Update the Deployment Status to "Success"
+      # This turns the link on your repo page green and active
+      - name: Update GitHub Deployment Status
+        uses: bobheadxi/deployments@v1
+        if: success()
+        with:
+          step: finish
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: success
+          env: ${{ steps.deployment.outputs.env }}
+          deployment_id: ${{ steps.deployment.outputs.id }}
+          env_url: https://dna-mutation-prediction.onrender.com # Your actual website URL
+
+      # Step 4: Handle failure
+      # This makes the deployment link red if something goes wrong
+      - name: Update GitHub Deployment Status on Failure
+        uses: bobheadxi/deployments@v1
+        if: failure()
+        with:
+          step: finish
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: failure
+          env: ${{ steps.deployment.outputs.env }}
+          deployment_id: ${{ steps.deployment.outputs.id }}

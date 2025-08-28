@@ -1,5 +1,7 @@
 Node Server/node_modules
+Node Server/views/new.html
 Node Server/package-lock.json
+Node Server/.env
 
 Python Server/venv
 
@@ -7,3 +9,7 @@ Data Extraction/Data/GRCh38.fa
 Data Extraction/Data/new_clinvar.vcf
 
 Dataset/data.csv
+
+Model Training/50K/50K.csv
+Model Training/100K/100K.csv
+Model Training/500K/500K.csv
