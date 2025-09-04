@@ -79,5 +79,3 @@ You need to have Node.js and Python installed on your machine.
 
 * [GitHub](https://github.com/Ankit6174)
 * [LinkedIn](https://www.linkedin.com/in/Ankit6174) 
-2.  **Upload to an Image Host:** Upload the screenshot to a site like [Imgur](https://imgur.com/upload).
-3.  **Update the URL:** Replace `https://i.imgur.com/your-screenshot-url.png` in the template with your actual screenshot URL.
