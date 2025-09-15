@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Form - Predict Your DNA Mutation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oooh+Baby&family=Questrial&family=Splash&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/prediction-form.css">
+</head>
+<body>
+    <div class="main-prediction-form-container">
+        <div class="main-prediction-form-top-heading-container">
+            <div class="text1">Muti-Step</div>
+            <div class="text2">| Genomic Variant Analysis</div>
+        </div>
+        <div class="main-prediction-form-second-container">
+            <div class="main-container-form-second-container-first-container">
+                <div class="main-preidction-form-second-container-top-container">
+                    <div class="main-prediction-form-second-container-top-circle-container">1</div>
+                    <div class="main-prediction-form-second-container-top-line-container"></div>
+                </div>
+                <div class="main-preidction-form-second-container-bottom-container">Enter Mutation Data</div>
+            </div>
+            <div class="main-container-form-second-container-first-container">
+                <div class="main-preidction-form-second-container-top-container">
+                    <div class="main-prediction-form-second-container-top-circle-container">2</div>
+                    <div class="main-prediction-form-second-container-top-line-container"></div>
+                </div>
+                <div class="main-preidction-form-second-container-bottom-container">Provide Sequence</div>
+            </div>
+            <div class="main-container-form-second-container-first-container">
+                <div class="main-preidction-form-second-container-top-container" style="justify-content: left;">
+                    <div class="main-prediction-form-second-container-top-circle-container">3</div>
+                </div>
+                <div class="main-preidction-form-second-container-bottom-container">Submit Analysis</div>
+            </div>
+        </div>
+        <form action="#">
+            <div class="dna-sequence-input-field">
+                <label for="dnaSequence">DNA Sequence</label>
+                <br>
+                <input type="text" id="dnasequence" name="dnasequence" placeholder="Enter DNA sequence (e.g., ATGC...)">
+            </div>
+            <div class="ref-alt-sequence-input-field">
+                <div class="ref-input-filed">
+                    <label for="reference">Reference</label>
+                <br>
+                <input type="text" id="reference" name="reference" placeholder="e.g., A">
+                </div>
+                <div class="alt-input-filed">
+                    <label for="alternate">Alternate</label>
+                <br>
+                <input type="text" id="alternate" name="alternate" placeholder="e.g., A">
+                </div>
+            </div>
+            <div class="mute-chrm-genome-input-field">
+               <div class="mute-chrom-input-field">
+                <div class="mute-input-filed">
+                    <label for="mutationType">Mutation</label>
+                    <br>
+                    <select name="mutation" id="mutation" required>
+                        <option value="" disabled selected>Select type</option>
+                        <option value="A->C">A->C</option>                        
+                        <option value="A->G">A->G</option>
+                        <option value="A->T">A->T</option>
+                        <option value="C->A">C->A</option>
+                        <option value="C->G">C->G</option>
+                        <option value="C->T">C->T</option>
+                        <option value="G->A">G->A</option>
+                        <option value="G->C">G->C</option>
+                        <option value="G->T">G->T</option>
+                        <option value="T->A">T->A</option>
+                        <option value="T->C">T->C</option>
+                        <option value="T->G">T->G</option>
+                    </select>
+                </div>
+                <div class="chrm-input-filed">
+                    <label for="chromosome">Chromosome</label>
+                    <br>
+                    <select name="chromosome" id="chromosome" required>
+                        <option value="" disabled selected>Select chromosome</option>
+                        <option value="chr1">chr1</option>
+                        <option value="chr2">chr2</option>
+                        <option value="chr3">chr3</option>
+                        <option value="chr4">chr4</option>
+                        <option value="chr5">chr5</option>
+                        <option value="chr5">chr6</option>
+                        <option value="chr5">chr7</option>
+                        <option value="chr5">chr8</option>
+                        <option value="chr5">chr9</option>
+                        <option value="chr5">chr10</option>
+                        <option value="chr5">chr11</option>
+                        <option value="chr5">chr12</option>
+                    </select>
+                </div>
+               </div>
+               <div class="genomic-position-input-field">
+                    <label for="genomicPosition">Genomic Position</label>
+                    <br>
+                    <input style="margin-top: 20px;" type="number" id="genomicPosition" name="genomicPosition" placeholder="e.g., 11240523">
+               </div>
+            </div>
+            <div class="form-bottom-container">
+                <div id="btn1" onclick="winodw.open('/')">
+                    <a style="text-decoration: none; color: #2a2a2a;" href="/">Home</a>
+                </div>
+                <button type="submit" id="btn2">Prediction</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

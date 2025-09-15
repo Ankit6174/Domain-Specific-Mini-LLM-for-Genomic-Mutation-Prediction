@@ -1,0 +1,211 @@
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oooh+Baby&family=Questrial&family=Splash&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+body {
+  font-family: "Inter";
+  background: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-prediction-form-container{
+    padding: 20px 0px;
+}
+
+.main-prediction-form-top-heading-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: "Wix Madefor Text", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.text1 {
+    font-size: 35px;
+    font-weight: 600;
+    color: #9E9E9E;
+}
+
+.text2 {
+    font-size: 35px;
+    font-weight: 900;
+    color: #2a2a2a;
+}
+
+.main-prediction-form-second-container{
+    display: flex;
+    margin-top: 35px;
+}
+
+.main-container-form-second-container-first-container{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    font-family: "Wix Madefor Text", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.main-preidction-form-second-container-top-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-prediction-form-second-container-top-circle-container{
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Wix Madefor Text", sans-serif;
+    font-weight: 500;
+    background: #2a2a2a;
+}
+
+.main-prediction-form-second-container-top-line-container{
+    width: 170px;
+    height: 4px;
+    background: #2a2a2a;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 30px;
+    font-family: "Questrial", sans-serif;
+    font-style: normal;
+}
+
+form label{
+    font-weight: 500;
+}
+
+form input{
+    width: 100%;
+    margin-top: 5px;
+    height: 40px;
+    border: none;
+    padding-left: 30px;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+    font-family: "IBM Plex Mono";
+    outline: none;
+}
+
+.ref-alt-sequence-input-field{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mute-chrm-genome-input-field{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mute-chrom-input-field{
+    display: flex;
+    justify-content: space-between;
+}
+
+#mutation{
+    -webkit-appearance: none;  /* Chrome, Safari, Opera */
+    -moz-appearance: none;     /* Firefox */
+    appearance: none; 
+
+    background: none;
+    border: 1px solid #ccc;
+    padding: 10px 40px;
+    margin-top: 20px;
+    font-family: "IBM Plex Mono";
+}
+
+#chromosome{
+    -webkit-appearance: none;  /* Chrome, Safari, Opera */
+    -moz-appearance: none;     /* Firefox */
+    appearance: none; 
+
+    background: none;
+    border: 1px solid #ccc;
+    padding: 10px 30px;
+    margin-top: 20px;
+    font-family: "IBM Plex Mono";
+}
+
+.form-bottom-container{
+    display: flex;
+    margin-top: 10px;
+    justify-content: flex-end;
+}
+
+#btn1 {
+    width: 67px;
+    border: 1px solid #2a2a2a;
+    font-family: "Wix Madefor Text", sans-serif;
+    background: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition:font-weight 0.3s;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#btn2 {
+    width: 96px;
+    font-family: "Wix Madefor Text", sans-serif;
+    background: #2a2a2a;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition:font-weight 0.3s;
+    cursor: pointer;
+    margin-left: 10px;
+    border: none;
+}
+
+@media (max-width: 560px) {
+    .text1, .text2{
+        font-size: 25px;
+    }
+
+    .main-prediction-form-second-container-top-line-container{
+        width: 100px;
+    }
+
+    .main-container-form-second-container-first-container{
+        font-size: 10px;
+    }
+
+    .ref-alt-sequence-input-field{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .mute-chrm-genome-input-field, .ref-alt-sequence-input-field, form{
+        gap: 25px;
+    }
+
+    #chromosome, #mutation{
+        padding: 10px 15px;
+    }
+}

@@ -13,3 +13,5 @@ Dataset/data.csv
 Model Training/50K/50K.csv
 Model Training/100K/100K.csv
 Model Training/500K/500K.csv
+
+Model Training/Deep Learning Model/Mutation Model/catboost_info

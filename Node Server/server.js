@@ -117,6 +117,10 @@ app.get('/prediction', (req, res) => {
     res.render("Prediction", {data, label, slicingGC, nucleoFreq, at_gc_content, mRNA});
 });
 
+app.get('/prediction-form', (req, res) => {
+    res.render("Prediction_Form");
+});
+
 DB();
 
 app.post("/postContect", async (req, res) => {
