@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const dotenv = require('dotenv');
+const axios = require('axios');
 const DB = require("./config/contectDB");
 const ContectSchema = require('./models/contect');
 
@@ -107,6 +108,7 @@ app.set('view engine', 'ejs');
 
 // Middlewares
 app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
@@ -133,6 +135,24 @@ app.post("/postContect", async (req, res) => {
         message
     });
     res.sendStatus(200);
+});
+
+app.post("/predict", (req, res) => {
+    // let { dnasequence, reference, alternate, mutation, chromosome, genomicPosition } = req.body;
+    const data = req.body;
+    console.log("Received data for prediction:", data);
+
+    axios.post("http://127.0.0.1:7000/predict", data)
+        .then((responce) => {
+            let prediction = responce.data;
+            console.log(prediction)
+            res.send(prediction);
+        })
+        .catch((error) => {
+            console.log(error);
+            res.sendStatus(512);
+
+        });
 });
 
 app.listen(PORT, () => {
