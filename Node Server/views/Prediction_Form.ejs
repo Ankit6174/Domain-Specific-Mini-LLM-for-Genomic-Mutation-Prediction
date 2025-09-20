@@ -41,18 +41,18 @@
             <div class="dna-sequence-input-field">
                 <label for="dnaSequence">DNA Sequence</label>
                 <br>
-                <input type="text" id="dnasequence" name="dnasequence" placeholder="Enter DNA sequence (e.g., ATGC...)">
+                <input type="text" id="dnasequence" name="dnasequence" placeholder="Enter DNA sequence (e.g., ATGC...)" required>
             </div>
             <div class="ref-alt-sequence-input-field">
                 <div class="ref-input-filed">
                     <label for="reference">Reference</label>
                 <br>
-                <input type="text" id="reference" name="reference" placeholder="e.g., A">
+                <input type="text" id="reference" name="reference" placeholder="e.g., A" required maxlength="1">
                 </div>
                 <div class="alt-input-filed">
                     <label for="alternate">Alternate</label>
                 <br>
-                <input type="text" id="alternate" name="alternate" placeholder="e.g., A">
+                <input type="text" id="alternate" name="alternate" placeholder="e.g., A" required maxlength="1">
                 </div>
             </div>
             <div class="mute-chrm-genome-input-field">
@@ -86,24 +86,24 @@
                         <option value="chr3">chr3</option>
                         <option value="chr4">chr4</option>
                         <option value="chr5">chr5</option>
-                        <option value="chr5">chr6</option>
-                        <option value="chr5">chr7</option>
-                        <option value="chr5">chr8</option>
-                        <option value="chr5">chr9</option>
-                        <option value="chr5">chr10</option>
-                        <option value="chr5">chr11</option>
-                        <option value="chr5">chr12</option>
+                        <option value="chr6">chr6</option>
+                        <option value="chr7">chr7</option>
+                        <option value="chr8">chr8</option>
+                        <option value="chr9">chr9</option>
+                        <option value="chr10">chr10</option>
+                        <option value="chr11">chr11</option>
+                        <option value="chr12">chr12</option>
                     </select>
                 </div>
                </div>
                <div class="genomic-position-input-field">
                     <label for="genomicPosition">Genomic Position</label>
                     <br>
-                    <input style="margin-top: 20px;" type="number" id="genomicPosition" name="genomicPosition" placeholder="e.g., 11240523">
+                    <input style="margin-top: 20px;" type="number" id="genomicPosition" name="genomicPosition" placeholder="e.g., 11240523" required>
                </div>
             </div>
             <div class="form-bottom-container">
-                <div id="btn1" onclick="winodw.open('/')">
+                <div id="btn1">
                     <a style="text-decoration: none; color: #2a2a2a;" href="/">Home</a>
                 </div>
                 <button type="submit" id="btn2">Prediction</button>
@@ -111,4 +111,5 @@
         </form>
     </div>
 </body>
+<script src="javascript/prediction-form.js"></script>
 </html>
