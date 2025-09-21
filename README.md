@@ -1,32 +1,25 @@
 # Domain-Specific Mini-LLM for Genomic Mutation Prediction
 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Ankit6174/Domain-Specific-Mini-LLM-for-Genomic-Mutation-Prediction/deploy.yml?style=for-the-badge)
 ![GitHub top language](https://img.shields.io/github/languages/top/Ankit6174/Domain-Specific-Mini-LLM-for-Genomic-Mutation-Prediction?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Ankit6174/Domain-Specific-Mini-LLM-for-Genomic-Mutation-Prediction?style=for-the-badge)
 
-A transformer-based, multi-task learning model that predicts the type, genomic position, and clinical impact of DNA mutations directly from raw sequence data.
-
-###  [**View Live Demo**](https://dna-mutation-prediction.onrender.com/) 
+A transformer-based, multi-task learning model that predicts the significance and clinical impact of DNA mutations directly from raw sequence data.
 
 ## The Problem
 
-Predicting the clinical significance of DNA mutations is a major challenge in genomics. The sheer volume of genetic data and sequence variability makes it difficult for researchers and clinicians to quickly identify which mutations might be pathogenic. This project aims to solve this by using a domain-specific transformer model to provide fast, accurate predictions, accelerating research and diagnostics.
+One of the greatest challenges in genomics is predicting the clinical significance of DNA mutations. The amount of genetic data and variability of DNA sequence make it difficult for researchers and clinicians to rapidly assess the mutations that are likely to be pathogenic. This proposal will address this problem by employing a domain-specific transformer model to generate predictions rapidly and accurately enough to facilitate research and clinical decisions.
 
 ## Key Features
 
-* **Multi-Task Prediction:** The model simultaneously predicts:
-    * **Clinical Significance:** (e.g., Pathogenic, Benign)
-    * **Mutation Type:** The specific base change (e.g., A → T)
-    * **Chromosome & Genomic Position:** The exact location of the mutation.
-* **Interactive Web Interface:** A user-friendly web app to input a DNA sequence and receive detailed, visualized results.
 * **Data Visualization:** Displays key metrics like GC/AT content, nucleotide frequency, and sliding window analysis.
-* **Full-Stack Application:** Features a complete frontend, backend server, and database integration for a seamless user experience.
+* **Full-Stack Application:** Implimented with a complete frontend, backend server for a seamless user experience.
+* **Lightweight and scalable model:** This model has only 2.9 million parameters.
 
 ---
 
 ## Tech Stack
 
-This project is a full-stack application built with a modern technology stack:
+This full-stack application is built using:
 
 | Category      | Technology                                                                                                                                                                                                                                             |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -34,9 +27,28 @@ This project is a full-stack application built with a modern technology stack:
 | **Backend** | ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 | **ML/DS** | ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white) |
 | **Database** | ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)                                                                                                                                         |
-| **Deployment**| ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)           |
+| **Deployment**| ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white) ![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E.svg?style=for-the-badge&logo=huggingface&logoColor=white)           |
 
 ---
+
+## Model Architecture
+
+Here is the lightweight architecture of the model.
+
+![Architecture](<./Node Server/public/images/Slide 16_9 - 1.jpg>)
+
+## Model Performance
+
+The model's performance is summarized in the classification report below:
+
+|               | Precision | Recall | F1-Score |
+| :------------ | :-------: | :----: | :------: |
+| 0             |   0.87    |  0.87  |   0.87   |
+| 1             |   0.85    |  0.86  |   0.85   |
+|               |           |        |          |
+| **Accuracy**  |     -     |   -    | **0.87** |
+| **Macro Avg** |   0.86    |  0.86  |   0.86   |
+| **Weighted Avg**|   0.87    |  0.87  |   0.87   |
 
 ## Getting Started: Local Installation
 
@@ -72,10 +84,13 @@ You need to have Node.js and Python installed on your machine.
 
 ---
 
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request.
+
 ## Author
 
 **Ankit Ahirwar**
 
 
-* [GitHub](https://github.com/Ankit6174)
+* [Twitter](https://x.com/Ankit6174)
 * [LinkedIn](https://www.linkedin.com/in/Ankit6174) 
