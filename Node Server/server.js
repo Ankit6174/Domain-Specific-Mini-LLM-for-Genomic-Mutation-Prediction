@@ -13,30 +13,35 @@ const PORT = process.env.PORT || 8001;
 const data = [
     {
         title: 'Melting Temperature',
+        id: 'melting_temp',
         content: '45°C',
         percentage: 10,
         para: 'From Average'
     },
     {
         title: 'Molecular Weight',
+        id: 'molecular_weight',
         content: '660g/mol',
         percentage: 60,
         para: 'From Average'
     },
     {
         title: 'Genomic Posistion',
+        id: 'genomic_pos',
         content: '40324',
         percentage: 78,
         para: 'Location Confidence'
     },
     {
         title: 'Chromosome',
+        id: 'chrmid',
         content: '12',
         percentage: 'High',
         para: 'Gene Density'
     },
     {
         title: 'Muatation Type',
+        id: 'mute_type_id',
         content: 'A → T',
         percentage: 82,
         para: 'Effect Confidence'
@@ -93,14 +98,14 @@ const getComplement = ((nucleo) => ({ G: 'C', C: 'G', A: 'T', T: 'A' }[nucleo]))
 
 const dna = 'GGTGGCCGCTGTGGCCTGTGCCCAAGTGCCTAAGATAACCCTCATCATTGGGGGCTCCTATGGAGCCGGAAACTATGGGATGTGTGGCAGAGCATATAGGTAGGTGTCATGATTTTCTCTGAAACAAAGAAACATGCTTCAAGTATAAAATACATGGTCAGTTTATTTCAGGTGTATTTGAAATATAGAATGCCATTCCCA';
 
-const mRNA = [
+const comDNA = [
     [dna[0], getComplement(dna[0])],
     [],
     [dna.slice(-1), getComplement(dna.slice(-1))]
 ];
 
 for (nucleo of dna.slice(1, -1)) {
-    mRNA[1].push([nucleo, getComplement(nucleo)])
+    comDNA[1].push([nucleo, getComplement(nucleo)])
 }
 
 // Configuration
@@ -115,8 +120,12 @@ app.get('/', (req, res) => {
     res.render("Home");
 });
 
-app.get('/prediction', (req, res) => {
-    res.render("Prediction", {data, label, slicingGC, nucleoFreq, at_gc_content, mRNA});
+app.get('/dashboard', (req, res) => {
+    res.render("Dashboard", {data, label, slicingGC, nucleoFreq, at_gc_content, comDNA});
+});
+
+app.get('/predict', (req, res) => {
+    res.render("Prediction", {data, label, slicingGC, nucleoFreq, at_gc_content, comDNA});
 });
 
 app.get('/prediction-form', (req, res) => {

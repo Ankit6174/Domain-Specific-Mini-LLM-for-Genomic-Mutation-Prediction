@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Predict Your DNA Mutation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oooh+Baby&family=Questrial&family=Splash&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+    <div class="date-day-container">
+        <div class="date-data-month-container">
+            <div class="date-container">19</div>
+            <div class="day-month-container">Tue, <br> December</div>
+        </div>
+        <div class="date-day-container-line"></div>
+        <a style="text-decoration: none;" href="/" class="return-to-home-button">
+            <p>Home</p>
+            <i class="ri-arrow-right-line"></i>
+        </a>
+    </div>
+
+    <div class="second-row">
+        <% data.forEach(feature=> { %>
+            <div class="second-card-container">
+                <p class="second-card-main-heading">
+                    <%= feature.title %>
+                </p>
+                <h1 id="<%= feature.id %> " class="second-card-main-content">
+                    <%= feature.content %>
+                </h1>
+                <div class="second-row-card-bottom-container">
+                    <div <% if (feature.percentage>50) { %>
+                        style="color: green; background: #0080004f"
+                        <% } else { %>
+                            style="color: red; background: rgba(255, 0, 0, 0.2);"
+                            <% } %>
+
+                                class="second-row-card-bottom-right-container">
+                                <% if (feature.percentage> 50) { %>
+                                    <i class="ri-arrow-up-line"></i>
+                                    <% } else { %>
+                                        <i class="ri-arrow-down-line"></i>
+                                        <% } %>
+
+                                            <% if (feature.percentage=='High' ) { %>
+                                                <%= feature.percentage %>
+                                                    <% } else { %>
+                                                        <%= feature.percentage %>%
+                                                            <% } %>
+                    </div>
+                    <p>
+                        <%= feature.para %>
+                    </p>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+
+    <div class="third-row">
+        <div class="mutation-prediction-card-container">
+            <div class="mutation-prediction-card-top-container">
+                <div class="benign-text-container">
+                    <div class="benign-text">
+                        Benign
+                    </div>
+                    <div class="benign-half-donut-wrapper">
+                        <div class="benign-half-donut"></div>
+                    </div>
+                    <div class="mutation-prediction-card-top-bottom-container">
+                        <p>34.00%</p>
+                        <p style="font-size: 10px;">Confidence Score</p>
+                    </div>
+                </div>
+                <div class="pathogenic-text-container">
+                    <div class="pathogenic-text">
+                        Pathogenic
+                    </div>
+                    <div class="pathogenic-half-donut-wrapper">
+                        <div class="pathogenic-half-donut"></div>
+                    </div>
+                    <div class="mutation-prediction-card-top-bottom-container">
+                        <p>68.00%</p>
+                        <p style="font-size: 10px;">Confidence Score</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mutation-prediction-card-bottom-container">
+                Moderate confidence of a pathogenic mutation. Results are inconclusive and may require further analysis.
+            </div>
+        </div>
+
+        <div class="input-dna-sequence-container">
+            <p>DNA Sequence</p>
+            <div class="dna-container">
+                <div class="dna-main-scroll-container">
+                    <div class="dna-scroll-items start-nucleotide-base-container">
+                        <svg class="start-nucleotide-base-svg" width="93" height="59" viewBox="0 0 93 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="43.3906" y1="58.8652" x2="49.0129" y2="38.7882" stroke="black"/>
+                            <path d="M48.3596 39.1142L44.7145 25.1591L56.8602 17.38L68.0118 26.5274L62.7581 39.9599L48.3596 39.1142Z" fill="#D9D9D9"/>
+                            <line x1="39.7637" y1="0.646447" x2="56.5399" y2="17.4226" stroke="black"/>
+                            <line x1="23.4414" y1="17.4226" x2="40.2175" y2="0.646421" stroke="black"/>
+                            <circle cx="12.5" cy="21.5" r="12.5" fill="#2A2A2A"/>
+                            <path d="M10.604 27H9.484V16.99H13.152C13.7773 16.99 14.3233 17.1067 14.79 17.34C15.2567 17.5733 15.6207 17.9 15.882 18.32C16.1433 18.74 16.274 19.2347 16.274 19.804C16.274 20.364 16.1433 20.854 15.882 21.274C15.6207 21.694 15.2567 22.0253 14.79 22.268C14.3233 22.5013 13.7773 22.618 13.152 22.618H10.464V21.638H13.152C13.768 21.638 14.2487 21.4747 14.594 21.148C14.9487 20.8213 15.126 20.3733 15.126 19.804C15.126 19.2253 14.9487 18.7773 14.594 18.46C14.2487 18.1333 13.768 17.97 13.152 17.97H10.604V27Z" fill="white"/>
+                            <line x1="43.3906" y1="58.8652" x2="49.0129" y2="38.7882" stroke="black"/>
+                            <line x1="68" y1="26.5" x2="93" y2="26.5" stroke="black"/>
+                        </svg>
+                        <div class="nucleotide-pair">
+                            <div class="top-nucleotide"> <%= comDNA[0][0] %> </div>
+                            <div class="bottom-nucleotide"> <%= comDNA[0][1] %> </div>
+                        </div>
+                        <svg width="122" height="54" viewBox="0 0 122 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.21 42.24C5.46 42.24 4.765 42.1 4.125 41.82C3.495 41.54 2.94 41.15 2.46 40.65C1.99 40.14 1.625 39.545 1.365 38.865C1.105 38.175 0.975 37.43 0.975 36.63C0.975 35.83 1.105 35.09 1.365 34.41C1.625 33.73 1.99 33.14 2.46 32.64C2.94 32.13 3.495 31.735 4.125 31.455C4.765 31.175 5.46 31.035 6.21 31.035C6.96 31.035 7.655 31.175 8.295 31.455C8.935 31.735 9.49 32.13 9.96 32.64C10.44 33.14 10.81 33.73 11.07 34.41C11.33 35.09 11.46 35.83 11.46 36.63C11.46 37.43 11.33 38.175 11.07 38.865C10.81 39.545 10.44 40.14 9.96 40.65C9.49 41.15 8.935 41.54 8.295 41.82C7.655 42.1 6.96 42.24 6.21 42.24ZM6.21 41.16C7 41.16 7.695 40.965 8.295 40.575C8.895 40.185 9.365 39.65 9.705 38.97C10.045 38.28 10.215 37.5 10.215 36.63C10.215 35.75 10.045 34.975 9.705 34.305C9.365 33.625 8.895 33.09 8.295 32.7C7.695 32.31 7 32.115 6.21 32.115C5.43 32.115 4.74 32.31 4.14 32.7C3.54 33.09 3.07 33.625 2.73 34.305C2.39 34.975 2.22 35.75 2.22 36.63C2.22 37.5 2.39 38.28 2.73 38.97C3.07 39.65 3.54 40.185 4.14 40.575C4.74 40.965 5.43 41.16 6.21 41.16ZM20.9565 42V31.275H22.1565V42H20.9565ZM15.2265 42H14.0265V31.275H15.2265V42ZM15.0765 36.96V35.895H21.0915V36.96H15.0765Z" fill="black"/>
+                            <line y1="-0.5" x2="23.0038" y2="-0.5" transform="matrix(-0.723497 0.690327 -0.767676 -0.640839 96.9502 37.1199)" stroke="black"/>
+                            <circle cx="109.5" cy="37.5" r="12.5" fill="#2A2A2A"/>
+                            <path d="M107.604 44H106.484V33.99H110.152C110.777 33.99 111.323 34.1067 111.79 34.34C112.257 34.5733 112.621 34.9 112.882 35.32C113.143 35.74 113.274 36.2347 113.274 36.804C113.274 37.364 113.143 37.854 112.882 38.274C112.621 38.694 112.257 39.0253 111.79 39.268C111.323 39.5013 110.777 39.618 110.152 39.618H107.464V38.638H110.152C110.768 38.638 111.249 38.4747 111.594 38.148C111.949 37.8213 112.126 37.3733 112.126 36.804C112.126 36.2253 111.949 35.7773 111.594 35.46C111.249 35.1333 110.768 34.97 110.152 34.97H107.604V44Z" fill="white"/>
+                            <line y1="-0.5" x2="23.1784" y2="-0.5" transform="matrix(-0.767676 -0.640839 0.723497 -0.690327 81.4971 52.9646)" stroke="black"/>
+                            <line y1="-0.5" x2="19.2852" y2="-0.5" transform="matrix(0.299386 -0.954132 0.970159 0.242468 62.9404 19.4006)" stroke="black"/>
+                            <line x1="29" y1="36.5" x2="50" y2="36.5" stroke="black"/>
+                            <path d="M62.6538 18.9612L71.9138 29.2785L63.7809 40.3265L49.4944 36.8373L48.7978 23.6329L62.6538 18.9612Z" fill="#D9D9D9"/>
+                        </svg>
+                    </div>
+                    <% comDNA[1].forEach(nucleoPair => { %>
+                    <div class="dna-scroll-items middle-nucleotide-base-container">
+                        <svg class="start-nucleotide-base-svg" width="93" height="59" viewBox="0 0 93 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="43.3906" y1="58.8652" x2="49.0129" y2="38.7882" stroke="black"/>
+                            <path d="M48.3596 39.1142L44.7145 25.1591L56.8602 17.38L68.0118 26.5274L62.7581 39.9599L48.3596 39.1142Z" fill="#D9D9D9"/>
+                            <line x1="39.7637" y1="0.646447" x2="56.5399" y2="17.4226" stroke="black"/>
+                            <line x1="23.4414" y1="17.4226" x2="40.2175" y2="0.646421" stroke="black"/>
+                            <circle cx="12.5" cy="21.5" r="12.5" fill="#2A2A2A"/>
+                            <path d="M10.604 27H9.484V16.99H13.152C13.7773 16.99 14.3233 17.1067 14.79 17.34C15.2567 17.5733 15.6207 17.9 15.882 18.32C16.1433 18.74 16.274 19.2347 16.274 19.804C16.274 20.364 16.1433 20.854 15.882 21.274C15.6207 21.694 15.2567 22.0253 14.79 22.268C14.3233 22.5013 13.7773 22.618 13.152 22.618H10.464V21.638H13.152C13.768 21.638 14.2487 21.4747 14.594 21.148C14.9487 20.8213 15.126 20.3733 15.126 19.804C15.126 19.2253 14.9487 18.7773 14.594 18.46C14.2487 18.1333 13.768 17.97 13.152 17.97H10.604V27Z" fill="white"/>
+                            <line x1="43.3906" y1="58.8652" x2="49.0129" y2="38.7882" stroke="black"/>
+                            <line x1="68" y1="26.5" x2="93" y2="26.5" stroke="black"/>
+                        </svg>
+                        <div style="margin-left: 27px; margin-top: -3px;" class="nucleotide-pair">
+                            <div class="top-nucleotide"> <%= nucleoPair[0] %> </div>
+                            <div class="bottom-nucleotide"> <%= nucleoPair[1] %> </div>
+                        </div>
+                        <svg width="93" height="54" viewBox="0 0 93 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line y1="-0.5" x2="23.0038" y2="-0.5" transform="matrix(-0.723497 0.690327 -0.767676 -0.640839 67.9502 37.1199)" stroke="black"/>
+                            <circle cx="80.5" cy="37.5" r="12.5" fill="#2A2A2A"/>
+                            <path d="M78.604 44H77.484V33.99H81.152C81.7773 33.99 82.3233 34.1067 82.79 34.34C83.2567 34.5733 83.6207 34.9 83.882 35.32C84.1433 35.74 84.274 36.2347 84.274 36.804C84.274 37.364 84.1433 37.854 83.882 38.274C83.6207 38.694 83.2567 39.0253 82.79 39.268C82.3233 39.5013 81.7773 39.618 81.152 39.618H78.464V38.638H81.152C81.768 38.638 82.2487 38.4747 82.594 38.148C82.9487 37.8213 83.126 37.3733 83.126 36.804C83.126 36.2253 82.9487 35.7773 82.594 35.46C82.2487 35.1333 81.768 34.97 81.152 34.97H78.604V44Z" fill="white"/>
+                            <line y1="-0.5" x2="23.1784" y2="-0.5" transform="matrix(-0.767676 -0.640839 0.723497 -0.690327 52.4971 52.9646)" stroke="black"/>
+                            <line y1="-0.5" x2="19.2852" y2="-0.5" transform="matrix(0.299386 -0.954132 0.970159 0.242468 33.9404 19.4006)" stroke="black"/>
+                            <line y1="36.5" x2="21" y2="36.5" stroke="black"/>
+                            <path d="M33.6538 18.9612L42.9138 29.2785L34.7809 40.3265L20.4944 36.8373L19.7978 23.6329L33.6538 18.9612Z" fill="#D9D9D9"/>
+                        </svg>
+                    </div>
+                    <% }) %>
+                    <div class="dna-scroll-items end-nucleotide-base-container">
+                        <svg width="122" height="67" viewBox="0 0 122 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="40.5214" y1="66.8552" x2="49.0158" y2="38.7783" stroke="black"/>
+                            <path d="M48.3596 39.1142L44.7145 25.1591L56.8602 17.38L68.0118 26.5274L62.7581 39.9599L48.3596 39.1142Z" fill="#D9D9D9"/>
+                            <line x1="39.7637" y1="0.646447" x2="56.5399" y2="17.4226" stroke="black"/>
+                            <line x1="23.4414" y1="17.4226" x2="40.2175" y2="0.646421" stroke="black"/>
+                            <circle cx="12.5" cy="21.5" r="12.5" fill="#2A2A2A"/>
+                            <path d="M10.604 27H9.484V16.99H13.152C13.7773 16.99 14.3233 17.1067 14.79 17.34C15.2567 17.5733 15.6207 17.9 15.882 18.32C16.1433 18.74 16.274 19.2347 16.274 19.804C16.274 20.364 16.1433 20.854 15.882 21.274C15.6207 21.694 15.2567 22.0253 14.79 22.268C14.3233 22.5013 13.7773 22.618 13.152 22.618H10.464V21.638H13.152C13.768 21.638 14.2487 21.4747 14.594 21.148C14.9487 20.8213 15.126 20.3733 15.126 19.804C15.126 19.2253 14.9487 18.7773 14.594 18.46C14.2487 18.1333 13.768 17.97 13.152 17.97H10.604V27Z" fill="white"/>
+                            <line x1="68" y1="26.5" x2="93" y2="26.5" stroke="black"/>
+                            <path d="M105.21 30.24C104.46 30.24 103.765 30.1 103.125 29.82C102.495 29.54 101.94 29.15 101.46 28.65C100.99 28.14 100.625 27.545 100.365 26.865C100.105 26.175 99.975 25.43 99.975 24.63C99.975 23.83 100.105 23.09 100.365 22.41C100.625 21.73 100.99 21.14 101.46 20.64C101.94 20.13 102.495 19.735 103.125 19.455C103.765 19.175 104.46 19.035 105.21 19.035C105.96 19.035 106.655 19.175 107.295 19.455C107.935 19.735 108.49 20.13 108.96 20.64C109.44 21.14 109.81 21.73 110.07 22.41C110.33 23.09 110.46 23.83 110.46 24.63C110.46 25.43 110.33 26.175 110.07 26.865C109.81 27.545 109.44 28.14 108.96 28.65C108.49 29.15 107.935 29.54 107.295 29.82C106.655 30.1 105.96 30.24 105.21 30.24ZM105.21 29.16C106 29.16 106.695 28.965 107.295 28.575C107.895 28.185 108.365 27.65 108.705 26.97C109.045 26.28 109.215 25.5 109.215 24.63C109.215 23.75 109.045 22.975 108.705 22.305C108.365 21.625 107.895 21.09 107.295 20.7C106.695 20.31 106 20.115 105.21 20.115C104.43 20.115 103.74 20.31 103.14 20.7C102.54 21.09 102.07 21.625 101.73 22.305C101.39 22.975 101.22 23.75 101.22 24.63C101.22 25.5 101.39 26.28 101.73 26.97C102.07 27.65 102.54 28.185 103.14 28.575C103.74 28.965 104.43 29.16 105.21 29.16ZM119.957 30V19.275H121.157V30H119.957ZM114.227 30H113.027V19.275H114.227V30ZM114.077 24.96V23.895H120.092V24.96H114.077Z" fill="black"/>
+                        </svg>
+                        <div style="margin-left: 27px; margin-top: -8px" class="nucleotide-pair">
+                            <div class="top-nucleotide"> <%= comDNA[2][0] %> </div>
+                            <div class="bottom-nucleotide"> <%= comDNA[2][1] %> </div>
+                        </div>
+                        <svg width="93" height="54" viewBox="0 0 93 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line y1="-0.5" x2="23.0038" y2="-0.5" transform="matrix(-0.723497 0.690327 -0.767676 -0.640839 67.9502 37.1199)" stroke="black"/>
+                            <circle cx="80.5" cy="37.5" r="12.5" fill="#2A2A2A"/>
+                            <path d="M78.604 44H77.484V33.99H81.152C81.7773 33.99 82.3233 34.1067 82.79 34.34C83.2567 34.5733 83.6207 34.9 83.882 35.32C84.1433 35.74 84.274 36.2347 84.274 36.804C84.274 37.364 84.1433 37.854 83.882 38.274C83.6207 38.694 83.2567 39.0253 82.79 39.268C82.3233 39.5013 81.7773 39.618 81.152 39.618H78.464V38.638H81.152C81.768 38.638 82.2487 38.4747 82.594 38.148C82.9487 37.8213 83.126 37.3733 83.126 36.804C83.126 36.2253 82.9487 35.7773 82.594 35.46C82.2487 35.1333 81.768 34.97 81.152 34.97H78.604V44Z" fill="white"/>
+                            <line y1="-0.5" x2="23.1784" y2="-0.5" transform="matrix(-0.767676 -0.640839 0.723497 -0.690327 52.4971 52.9646)" stroke="black"/>
+                            <line y1="-0.5" x2="19.2852" y2="-0.5" transform="matrix(0.299386 -0.954132 0.970159 0.242468 33.9404 19.4006)" stroke="black"/>
+                            <line y1="36.5" x2="21" y2="36.5" stroke="black"/>
+                            <path d="M33.6538 18.9612L42.9138 29.2785L34.7809 40.3265L20.4944 36.8373L19.7978 23.6329L33.6538 18.9612Z" fill="#D9D9D9"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="forth-row">
+      <div class="sliding-window-gc-content-container">
+        <p class="sliding-window-gc-content-main-heading">
+          Sliding Window GC Content
+        </p>
+        <div class="sliding-window-gc-content-middle-container">
+          <div class="sliding-window-gc-content-middle-left-container">
+            <i class="ri-arrow-right-up-line"></i>
+            70%
+          </div>
+          <p>Window size 30</p>
+        </div>
+        <div class="sliding-window-gc-content-bottom-container">
+          <% slicingGC[1].forEach(content => { %>
+           <div class="sliding-window-gc-content-bottom-bar-container">
+            <p> <%= content %>%</p>
+            <div style="height: <%= content*0.8 %>%;" class="sliding-window-gc-content-bottom-bar"></div>
+          </div>
+          <% }) %>
+          
+        </div>
+      </div>
+
+      <div class="at-gc-content-container">
+        <div class="at-gc-content-top-container">
+          <p class="at-gc-content-main-heading">GC/AT Content</p>
+          <div class="at-gc-content-top-right-container">
+            <% at_gc_content.forEach(contents => { %>
+              <div class="at-gc-content-top-right-top-container">
+                <div 
+                style="background: <%= contents[2] %> ;"
+                 class="at-gc-content-top-right-top-left"></div>
+                <div class="at-gc-content-top-right-top-middle">
+                  <%= contents[0] %>
+                </div>
+                <div
+                <% if (contents[1] > 50) { %>
+                 style="background: rgba(9, 255, 0, 0.3); color: green;"
+                 <% } else { %>
+                  style="background: rgba(255, 0, 0, 0.3); color: red;"
+                <% } %>
+                class="at-gc-content-top-right-top-right">
+                  <% if (contents[1] > 50) { %>
+                    <i class="ri-arrow-right-up-line"></i>
+                    <% } else { %>
+                     <i class="ri-arrow-left-down-line"></i>
+                  <% } %>
+                  <%= contents[1] %>%
+                </div>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+        <div class="at-gc-content-bottom-container">
+          <% for( let index = 0; index < at_gc_content[1][1]; index++ ) { %>
+            <div style="background: <%= at_gc_content[1][2] %>;" class="gc-content"></div>
+            <% } %>
+            <% for( let index = 0; index < at_gc_content[0][1]; index++ ) { %>
+              <div style="background: <%= at_gc_content[0][2] %>;" class="at-content"></div>
+          <% } %>
+        </div>
+      </div>
+
+      <div class="nucleotide-frequency-container">
+        <p class="nucleotide-frequency-main-heading">Nucleotid Frequency</p>
+        <div class="nucleotide-frequency-middle-container">
+          <div class="nucleotide-frequency-middle-left-container">
+            <i class="ri-arrow-right-up-line"></i>
+            G
+          </div>
+          <p>Minimum Frequency</p>
+        </div>
+        <div class="nucleotide-frequency-bottom-container">
+          <% nucleoFreq.forEach(freq => { %>
+           <div class="nucleotide-frequency-bottom-bar-container">
+            <p> <%= freq[0] %> </p>
+            <div style="height: <%= freq[1] %>%;" class="nucleotide-frequency-bottom-bar"></div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div class="sixth-row">
+      <div class="report-main-container">
+        <h1>Report</h1>
+        <p>Mutation A → T at genomic position 40324 (Chromosome 12) is predicted to be Pathogenic with 82% confidence. This analysis suggests potential functional impact, supported by GC/AT content, nucleotide composition, and mutation density.</p>
+      </div>
+      <div class="report-print-container">
+        <div class="report-alert-container">
+          <i class="ri-error-warning-line"></i>
+          <p>This report is intended for research and educational purposes only.</p>
+        </div>
+        <div class="report-print-button-container">
+          <i class="ri-download-2-line"></i>
+          <p>Download?</p>
+        </div>
+      </div>
+    </div>
+</body>
+</html> 

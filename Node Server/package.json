@@ -7,8 +7,7 @@
     "start": "node server.js",
     "start-server": "nodemon server.js",
     "home-sass": "sass --watch scss/home.scss public/css/main.css",
-    "prediction-sass": "sass --watch scss/predict.scss public/css/prediction.css",
-    "dev": "concurrently -n SERVER, HOME, PREDICT -c green, cyan, magenta \"npm run start-server\" \"npm run home-sass\" \"npm run prediction-sass\""
+    "dev": "concurrently -n SERVER, HOME, PREDICT -c green, cyan, magenta \"npm run start-server\" \"npm run home-sass\""
   },
   "keywords": [],
   "author": "",
@@ -21,6 +20,7 @@
     "dotenv": "^17.2.1",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
+    "install": "^0.13.0",
     "mongoose": "^8.17.2"
   }
 }
