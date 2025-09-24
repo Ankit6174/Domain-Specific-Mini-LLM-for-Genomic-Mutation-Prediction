@@ -3,7 +3,7 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/Ankit6174/Domain-Specific-Mini-LLM-for-Genomic-Mutation-Prediction?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Ankit6174/Domain-Specific-Mini-LLM-for-Genomic-Mutation-Prediction?style=for-the-badge)
 
-A transformer-based, multi-task learning model that predicts the significance and clinical impact of DNA mutations directly from raw sequence data.
+An encoder only transformer model that predicts the significance and clinical impact of DNA mutations directly from raw sequence data.
 
 ## The Problem
 
@@ -72,15 +72,17 @@ You need to have Node.js and Python installed on your machine.
     npm install
     npm run dev
     ```
-    This will start the frontend server, typically on `http://localhost:8001`.
+    This will start the frontend server, typically on `http://localhost:8000`.
 
-3.  **Set up the Python Server (ML Model):**
+3.  **Set up the Python Server ML Model (Optional):**
     ```sh
-    cd "Python Server"
-    pip install -r requirements.txt  # You may need to create this file
-    python server.py
+    git lfs install
+    git clone https://huggingface.co/spaces/ankitt6174/dna-mutation-prediction 
+    
+    # If you want to clone without large files - just their pointers
+    GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/spaces/ankitt6174/dna-mutation-prediction
     ```
-    This will start the Flask server for the model, typically on `http://localhost:5000`.
+    Or checkout my huggingface account - [spaces/ankitt6174/dna-mutation-prediction](https://huggingface.co/spaces/ankitt6174/dna-mutation-prediction)
 
 ---
 
@@ -91,6 +93,6 @@ Contributions are welcome! Please open an issue or submit a pull request.
 
 **Ankit Ahirwar**
 
-
 * [Twitter](https://x.com/Ankit6174)
+* [Medium](https://medium.com/@ankit6174)
 * [LinkedIn](https://www.linkedin.com/in/Ankit6174) 
