@@ -10,104 +10,6 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8001;
 
-const data = [
-    {
-        title: 'Melting Temperature',
-        id: 'melting_temp',
-        content: '45°C',
-        percentage: 10,
-        para: 'From Average'
-    },
-    {
-        title: 'Molecular Weight',
-        id: 'molecular_weight',
-        content: '660g/mol',
-        percentage: 60,
-        para: 'From Average'
-    },
-    {
-        title: 'Genomic Posistion',
-        id: 'genomic_pos',
-        content: '40324',
-        percentage: 78,
-        para: 'Location Confidence'
-    },
-    {
-        title: 'Chromosome',
-        id: 'chrmid',
-        content: '12',
-        percentage: 'High',
-        para: 'Gene Density'
-    },
-    {
-        title: 'Muatation Type',
-        id: 'mute_type_id',
-        content: 'A → T',
-        percentage: 82,
-        para: 'Effect Confidence'
-    }
-];
-
-const label = [
-    {
-        'Pathogenic': 82
-    },
-    [
-        'Benign',
-        'Likely Benign',
-        'Uncertain Significance',
-        'Likely Pathogenic',
-        'CIP'
-    ],
-    [
-        90,
-        55,
-        70,
-        30,
-        15
-    ]
-];
-
-const slicingGC = [
-    {
-        'max': 82
-    },
-    [
-        50, 
-        40, 
-        60, 
-        55, 
-        82, 
-        45
-    ]
-]
-
-const nucleoFreq = [
-    ['A', 60],
-    ['T', 50],
-    ['G', 90],
-    ['C', 80]
-]
-
-const at_gc_content = [
-    ['AT', 45, '#2a2a2a'],
-    ['GC', 55, 'rgba(255, 0, 0, 0.48)'],
-]
-
-const getComplement = ((nucleo) => ({ G: 'C', C: 'G', A: 'T', T: 'A' }[nucleo]));
-
-const dna = 'GGTGGCCGCTGTGGCCTGTGCCCAAGTGCCTAAGATAACCCTCATCATTGGGGGCTCCTATGGAGCCGGAAACTATGGGATGTGTGGCAGAGCATATAGGTAGGTGTCATGATTTTCTCTGAAACAAAGAAACATGCTTCAAGTATAAAATACATGGTCAGTTTATTTCAGGTGTATTTGAAATATAGAATGCCATTCCCA';
-
-const comDNA = [
-    [dna[0], getComplement(dna[0])],
-    [],
-    [dna.slice(-1), getComplement(dna.slice(-1))]
-];
-
-for (nucleo of dna.slice(1, -1)) {
-    comDNA[1].push([nucleo, getComplement(nucleo)])
-}
-
 // Configuration
 app.set('view engine', 'ejs');
 
@@ -120,16 +22,12 @@ app.get('/', (req, res) => {
     res.render("Home");
 });
 
-app.get('/dashboard', (req, res) => {
-    res.render("Dashboard", {data, label, slicingGC, nucleoFreq, at_gc_content, comDNA});
-});
-
-app.get('/predict', (req, res) => {
-    res.render("Prediction", {data, label, slicingGC, nucleoFreq, at_gc_content, comDNA});
-});
-
 app.get('/prediction-form', (req, res) => {
     res.render("Prediction_Form");
+});
+
+app.get('/test', (req, res) => {
+    res.render("Test", { data, label, slicingGC, nucleoFreq, at_gc_content, comDNA });
 });
 
 DB();
@@ -147,15 +45,24 @@ app.post("/postContect", async (req, res) => {
 });
 
 app.post("/predict", (req, res) => {
-    // let { dnasequence, reference, alternate, mutation, chromosome, genomicPosition } = req.body;
     const data = req.body;
-    console.log("Received data for prediction:", data);
 
-    axios.post("http://127.0.0.1:7000/predict", data)
+    axios.post("https://ankitt6174-dna-mutation-prediction.hf.space/predict", data)
         .then((responce) => {
             let prediction = responce.data;
-            console.log(prediction)
-            res.send(prediction);
+            
+            res.render('Dashboard', {
+                data: prediction.topData, 
+                prediction_score: prediction.Prediction, 
+                comDNA: prediction.comDNA,
+                slicingGC: prediction.slicingGC,
+                nucleoFreq: prediction.nucleoFreq,
+                at_gc_content: prediction.at_gc_content,
+                mutation_name: prediction.Mutation_Label,
+                DNA: prediction.DNA,
+                mRNA: prediction.mRNA,
+                Protein: prediction.Protein
+            });
         })
         .catch((error) => {
             console.log(error);

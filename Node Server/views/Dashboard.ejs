@@ -7,6 +7,8 @@
     <title>Dashboard - Predict Your DNA Mutation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oooh+Baby&family=Questrial&family=Splash&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap"
         rel="stylesheet">
@@ -15,10 +17,87 @@
 </head>
 
 <body>
+    <div style="display: none;" class="report-container">
+        <header class="pb-6 mb-8 border-b border-gray-300">
+            <h1 class="text-3xl font-extrabold text-gray-900 mb-1">GENETIC ANALYSIS REPORT</h1>
+            <p class="text-sm text-gray-500">Prepared for: Research and Educational Use</p>
+            <p class="text-sm text-gray-500" id="report-meta"></p>
+        </header>
+
+        <main class="space-y-8">
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Patient/Sample Information</h2>
+                <div class="grid grid-cols-2 gap-4 text-gray-700">
+                    <div>
+                        <p class="font-semibold">Mutation Label</p>
+                        <p class="text-gray-600"> <%= mutation_name %> </p>
+                    </div>
+                    <div>
+                        <p class="font-semibold">Genomic Position:</p>
+                        <p class="text-gray-600">Chromosome <%= data[3].content %>, Position <%= data[2].content %></p>
+                    </div>
+                    <div>
+                        <p class="font-semibold">Mutation Type:</p>
+                        <p class="text-gray-600"> <%= data[data.length - 1].content %> </p>
+                    </div>
+                    <div>
+                        <p class="font-semibold">Molecular Weight:</p>
+                        <p class="text-gray-600"> <%= data[1].content %>] </p>
+                    </div>
+                    <div>
+                        <p class="font-semibold">Melting Temperature:</p>
+                        <p class="text-gray-600"> <%= data[0].content%> </p>
+                    </div>
+                    <div>
+                        <p class="font-semibold">GC/AT Content:</p>
+                        <p class="text-gray-600">GC: <%= at_gc_content[1][1] %>% / AT: <%= at_gc_content[0][1] %>%</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Sequence Information</h2>
+                <div class="space-y-6">
+                    <div>
+                        <p class="font-semibold text-gray-700 mb-2">Input DNA Sequence:</p>
+                        <div class="sequence-box">
+                            <p> <%= DNA %> </p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-700 mb-2">mRNA Sequence:</p>
+                        <div class="sequence-box">
+                            <p> <%= mRNA %> </p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-700 mb-2">Protein Transcription:</p>
+                        <div class="sequence-box">
+                            <p> <%= Protein %> </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Conclusion and Interpretation</h2>
+                <p class="text-gray-700">Mutation <%= data[4].content %> at genomic position <%= data[2].content %> (Chromosome <%= data[3].content %>) is predicted to be <%= mutation_name %> with <%= data[4].percentage %>% confidence. Please note that this conclusion is derived from a limited set of data and computational models. Further clinical analysis and verification are strongly recommended.</p>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="text-xl font-bold text-red-700 mb-2">Important Caution</h2>
+                <p class="text-red-600">This report is intended for **research and educational purposes only**. It should not be used for clinical diagnosis or treatment. All interpretations should be verified by a qualified professional.</p>
+            </section>
+        </main>
+    </div>
+
     <div class="date-day-container">
         <div class="date-data-month-container">
-            <div class="date-container">19</div>
-            <div class="day-month-container">Tue, <br> December</div>
+            <div id="date" class="date-container">Date</div>
+            <div class="day-month-container">
+              <font id="day">Day</font>, <br> 
+              <font id="month">,Month</font>
+            </div>
         </div>
         <div class="date-day-container-line"></div>
         <a style="text-decoration: none;" href="/" class="return-to-home-button">
@@ -33,7 +112,7 @@
                 <p class="second-card-main-heading">
                     <%= feature.title %>
                 </p>
-                <h1 id="<%= feature.id %> " class="second-card-main-content">
+                <h1 class="second-card-main-content">
                     <%= feature.content %>
                 </h1>
                 <div class="second-row-card-bottom-container">
@@ -72,10 +151,10 @@
                         Benign
                     </div>
                     <div class="benign-half-donut-wrapper">
-                        <div class="benign-half-donut"></div>
+                        <div style="background: conic-gradient(#10B981 calc(<%= prediction_score.Benign %> * 1.8deg), #e9e9e9 0deg);" class="benign-half-donut"></div>
                     </div>
                     <div class="mutation-prediction-card-top-bottom-container">
-                        <p>34.00%</p>
+                        <p> <%= prediction_score.Benign %>%</p>
                         <p style="font-size: 10px;">Confidence Score</p>
                     </div>
                 </div>
@@ -84,10 +163,10 @@
                         Pathogenic
                     </div>
                     <div class="pathogenic-half-donut-wrapper">
-                        <div class="pathogenic-half-donut"></div>
+                        <div style="background: conic-gradient(#EF4444 calc(<%= prediction_score.Pathogenic %> * 1.8deg), #e9e9e9 0deg);" class="pathogenic-half-donut"></div>
                     </div>
                     <div class="mutation-prediction-card-top-bottom-container">
-                        <p>68.00%</p>
+                        <p> <%= prediction_score.Pathogenic %>%</p>
                         <p style="font-size: 10px;">Confidence Score</p>
                     </div>
                 </div>
@@ -192,7 +271,7 @@
         <div class="sliding-window-gc-content-middle-container">
           <div class="sliding-window-gc-content-middle-left-container">
             <i class="ri-arrow-right-up-line"></i>
-            70%
+            <%= slicingGC[0].max %>
           </div>
           <p>Window size 30</p>
         </div>
@@ -265,25 +344,23 @@
           <% }) %>
         </div>
       </div>
-
-      
     </div>
 
     <div class="sixth-row">
       <div class="report-main-container">
         <h1>Report</h1>
-        <p>Mutation A → T at genomic position 40324 (Chromosome 12) is predicted to be Pathogenic with 82% confidence. This analysis suggests potential functional impact, supported by GC/AT content, nucleotide composition, and mutation density.</p>
+        <p>Mutation <%= data[4].content %> at genomic position <%= data[2].content %> (Chromosome <%= data[3].content %>) is predicted to be <%= mutation_name %> with <%= data[4].percentage %>% confidence. This analysis suggests potential functional impact, supported by GC/AT content, nucleotide composition, and mutation density.</p>
       </div>
       <div class="report-print-container">
         <div class="report-alert-container">
           <i class="ri-error-warning-line"></i>
           <p>This report is intended for research and educational purposes only.</p>
         </div>
-        <div class="report-print-button-container">
-          <i class="ri-download-2-line"></i>
-          <p>Download?</p>
+        <div onclick="printReport()" class="report-print-button-container">
+          <p>Download</p>
         </div>
       </div>
     </div>
 </body>
+<script src="javascript/dashboard.js"></script>
 </html> 
